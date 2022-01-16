@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="19529" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch45"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="19514"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="__CornivorePOC_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="left" layout="vertical" id="tI5-xX-YPY">
+                            <items>
+                                <timer alignment="center" textAlignment="center" id="lsS-cc-uyX">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                    <calendarUnit key="units" minute="YES" second="YES"/>
+                                </timer>
+                                <button width="1" alignment="left" title="Start Timer" id="Vva-LV-0AR">
+                                    <connections>
+                                        <action selector="onTimerButton" destination="AgC-eL-Hgc" id="NXo-Ng-0Er"/>
+                                    </connections>
+                                </button>
+                                <label alignment="center" text="Weight: 16 oz" id="77G-bN-L3C"/>
+                                <group width="1" alignment="left" spacing="20" id="hb1-I4-eCr">
+                                    <items>
+                                        <button alignment="center" backgroundImage="minus.circle.fill" catalog="system" id="w7F-Nd-aRP">
+                                            <color key="backgroundColor" name="AccentColor"/>
+                                            <fontDescription key="font" type="system" pointSize="16"/>
+                                            <connections>
+                                                <action selector="onMinusButton" destination="AgC-eL-Hgc" id="4x3-qa-99g"/>
+                                            </connections>
+                                        </button>
+                                        <button alignment="center" backgroundImage="plus.circle.fill" catalog="system" id="kNy-sZ-P1D">
+                                            <color key="backgroundColor" name="AccentColor"/>
+                                            <connections>
+                                                <action selector="onPlusButton" destination="AgC-eL-Hgc" id="oxp-8X-ta0"/>
+                                            </connections>
+                                        </button>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="timer" destination="lsS-cc-uyX" id="y1W-lV-BNk"/>
+                        <outlet property="weightLabel" destination="77G-bN-L3C" id="8NW-8D-WlT"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="51" y="10"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="minus.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

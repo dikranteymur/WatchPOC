@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="19529" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch45"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="19514"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="__HelloAppleWatchPOC_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label alignment="center" verticalAlignment="center" text="HELLO, WORLD!" textAlignment="justified" id="jCA-EP-9QL">
+                            <fontDescription key="font" type="system" pointSize="24"/>
+                        </label>
+                        <slider width="1" alignment="left" value="1" maximum="100" steps="1" id="IDb-pt-JOK">
+                            <connections>
+                                <action selector="sliderTapped:" destination="AgC-eL-Hgc" id="BUe-6h-ztu"/>
+                            </connections>
+                        </slider>
+                        <label alignment="center" text="0" textAlignment="justified" id="VJZ-yG-iHb">
+                            <fontDescription key="font" type="system" pointSize="35"/>
+                        </label>
+                        <button width="1" alignment="center" title="Tap Me!" id="oTu-Im-aP2">
+                            <connections>
+                                <action selector="tapMeButtonTapped" destination="AgC-eL-Hgc" id="3cQ-05-vJx"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="countLabel" destination="VJZ-yG-iHb" id="Dbf-RX-tda"/>
+                        <outlet property="label" destination="jCA-EP-9QL" id="POl-sL-hAX"/>
+                        <outlet property="slider" destination="IDb-pt-JOK" id="eoO-Je-Z2p"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="81" y="10"/>
+        </scene>
+    </scenes>
+</document>
