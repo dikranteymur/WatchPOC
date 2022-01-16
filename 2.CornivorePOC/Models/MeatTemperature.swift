@@ -8,21 +8,23 @@
 import Foundation
 
 enum MeatTemperature: Int {
-    case start = 0
-    case rare = 1
-    case medium = 2
-    case wellDone = 3
+    case rare = 0, mediumRare, medium, wellDone
     
     var stringValue: String {
-        switch self {
-            case .start:
-                return "Start Cooking"
-            case .rare:
-                return "Rare"
-            case .medium:
-                return "Medium"
-            case .wellDone:
-                return "Well Done"
-        }
+        let temperatures = ["Rare", "Medium Rate", "Medium", "Well Done"]
+        return temperatures[self.rawValue]
+    }
+    
+    var timeModifier: Double {
+        let modifiers = [0.5, 0.75, 1.0, 1.5]
+        return modifiers[self.rawValue]
+    }
+    
+    func cookTimeForOunces(_ ounces: Int) -> TimeInterval {
+        let baseTime: TimeInterval = 47 * 60
+        let baseWeight = 16
+        let weightModifier: Double = Double(ounces) / Double(baseWeight)
+        let tempModifier = self.timeModifier
+        return baseTime * weightModifier * tempModifier
     }
 }

@@ -12,12 +12,14 @@ import Foundation
 class InterfaceController: WKInterfaceController {
 
     @IBOutlet weak var timer: WKInterfaceTimer!
+    @IBOutlet weak var timerButton: WKInterfaceButton!
     @IBOutlet weak var weightLabel: WKInterfaceLabel!
     
     @IBOutlet weak var cookLabel: WKInterfaceLabel!
     
     var ounces = 16
     var cookTemp = MeatTemperature.medium
+    var timerRunning = false
     
     override func awake(withContext context: Any?) {
         // Configure interface objects here.
@@ -31,11 +33,15 @@ class InterfaceController: WKInterfaceController {
     }
 
     @IBAction func onTimerButton() {
-        let countdown: TimeInterval = 20
-        let date = Date(timeIntervalSinceNow: countdown)
-        
-        timer.setDate(date)
-        timer.start()
+        if timerRunning {
+            timer.stop()
+            timerButton.setTitle("Start Timer")
+        } else {
+            let time = cookTemp.cookTimeForOunces(ounces)
+            timer.setDate(Date(timeIntervalSinceNow: time))
+            timer.start()
+            timerButton.setTitle("Stop Timer")
+        }
     }
     
     @IBAction func onMinusButton() {
