@@ -26,14 +26,14 @@
                                 <label alignment="center" text="Weight: 16 oz" id="77G-bN-L3C"/>
                                 <group width="1" alignment="left" spacing="20" id="hb1-I4-eCr">
                                     <items>
-                                        <button alignment="center" backgroundImage="minus.circle.fill" catalog="system" id="w7F-Nd-aRP">
+                                        <button width="48" height="48" alignment="center" backgroundImage="minus.circle.fill" catalog="system" id="w7F-Nd-aRP">
                                             <color key="backgroundColor" name="AccentColor"/>
-                                            <fontDescription key="font" type="system" pointSize="16"/>
+                                            <fontDescription key="font" type="system" pointSize="35"/>
                                             <connections>
                                                 <action selector="onMinusButton" destination="AgC-eL-Hgc" id="4x3-qa-99g"/>
                                             </connections>
                                         </button>
-                                        <button alignment="center" backgroundImage="plus.circle.fill" catalog="system" id="kNy-sZ-P1D">
+                                        <button width="48" height="48" alignment="center" backgroundImage="plus.circle.fill" catalog="system" id="kNy-sZ-P1D">
                                             <color key="backgroundColor" name="AccentColor"/>
                                             <connections>
                                                 <action selector="onPlusButton" destination="AgC-eL-Hgc" id="oxp-8X-ta0"/>
@@ -41,16 +41,27 @@
                                         </button>
                                     </items>
                                 </group>
+                                <group width="1" alignment="left" layout="vertical" id="6Mz-4B-5ah">
+                                    <items>
+                                        <label alignment="left" text="Label" id="rev-3v-kGP"/>
+                                        <slider width="1" alignment="left" continuous="YES" value="2" maximum="3" steps="3" id="Obi-al-gGx">
+                                            <connections>
+                                                <action selector="onTempChange:" destination="AgC-eL-Hgc" id="ZJX-gj-75m"/>
+                                            </connections>
+                                        </slider>
+                                    </items>
+                                </group>
                             </items>
                         </group>
                     </items>
                     <connections>
+                        <outlet property="cookLabel" destination="rev-3v-kGP" id="xcS-NA-tYi"/>
                         <outlet property="timer" destination="lsS-cc-uyX" id="y1W-lV-BNk"/>
                         <outlet property="weightLabel" destination="77G-bN-L3C" id="8NW-8D-WlT"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="51" y="10"/>
+            <point key="canvasLocation" x="50.828282828282831" y="9.8347107438016526"/>
         </scene>
     </scenes>
     <resources>

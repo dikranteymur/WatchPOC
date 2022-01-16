@@ -14,7 +14,10 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet weak var timer: WKInterfaceTimer!
     @IBOutlet weak var weightLabel: WKInterfaceLabel!
     
+    @IBOutlet weak var cookLabel: WKInterfaceLabel!
+    
     var ounces = 16
+    var cookTemp = MeatTemperature.medium
     
     override func awake(withContext context: Any?) {
         // Configure interface objects here.
@@ -24,6 +27,7 @@ class InterfaceController: WKInterfaceController {
     
     func updateConfiguration() {
         weightLabel.setText("Weight: \(ounces) oz")
+        cookLabel.setText(cookTemp.stringValue)
     }
 
     @IBAction func onTimerButton() {
@@ -42,6 +46,13 @@ class InterfaceController: WKInterfaceController {
     @IBAction func onPlusButton() {
         ounces += 1
         updateConfiguration()
+    }
+    
+    @IBAction func onTempChange(_ value: Float) {
+        if let temp = MeatTemperature(rawValue: Int(value)) {
+            cookTemp = temp
+            updateConfiguration()
+        }
     }
     
 }
