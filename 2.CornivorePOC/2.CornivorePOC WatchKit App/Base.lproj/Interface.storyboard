@@ -53,6 +53,15 @@
                                 </slider>
                             </items>
                         </group>
+                        <group width="1" alignment="left" id="vZe-6G-Xph">
+                            <items>
+                                <switch width="1" alignment="left" title="Metric" id="JfI-ec-VHo">
+                                    <connections>
+                                        <action selector="onMetricChanged:" destination="AgC-eL-Hgc" id="62x-Fg-LUI"/>
+                                    </connections>
+                                </switch>
+                            </items>
+                        </group>
                     </items>
                     <connections>
                         <outlet property="cookLabel" destination="tWr-nS-lUU" id="ae5-1x-2WV"/>

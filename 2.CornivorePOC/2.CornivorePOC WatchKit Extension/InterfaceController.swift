@@ -19,6 +19,7 @@ class InterfaceController: WKInterfaceController {
     var ounces = 16
     var cookTemp = MeatTemperature.medium
     var timerRunning = false
+    var usingMetric = false
     
     override func awake(withContext context: Any?) {
         // Configure interface objects here.
@@ -28,6 +29,15 @@ class InterfaceController: WKInterfaceController {
     
     func updateConfiguration() {
         weightLabel.setText("Weight: \(ounces) oz")
+        var weight = ounces
+        var unit = "oz"
+        if usingMetric {
+            let grams = Double(ounces) * 28.3495
+            weight = Int(grams)
+            unit = "gm"
+        }
+        weightLabel.setText("Weight: \(weight) \(unit)")
+        
         cookLabel.setText(cookTemp.stringValue)
     }
 
@@ -45,6 +55,10 @@ class InterfaceController: WKInterfaceController {
         timerRunning.toggle()
     }
     
+    override func scroll(to object: WKInterfaceObject, at scrollPosition: WKInterfaceScrollPosition, animated: Bool) {
+        
+    }
+    
     @IBAction func onMinusButton() {
         ounces -= 1
         updateConfiguration()
@@ -60,7 +74,29 @@ class InterfaceController: WKInterfaceController {
             cookTemp = temp
             updateConfiguration()
         }
-            
     }
     
+    @IBAction func onMetricChanged(_ value: Bool) {
+        usingMetric = value
+        updateConfiguration()
+    }
+    
+    
+    
+    
+}
+
+extension InterfaceController {
+    override func interfaceOffsetDidScrollToTop() {
+        print("User scrolled to top")
+    }
+    
+    override func interfaceDidScrollToTop() {
+        // Saatin en ustunde bulunan saatin bulundugu alana basildiginda calisir
+        print("User went to top by tapping status bar")
+    }
+    
+    override func interfaceOffsetDidScrollToBottom() {
+        print("User scrolled to bottom")
+    }
 }
