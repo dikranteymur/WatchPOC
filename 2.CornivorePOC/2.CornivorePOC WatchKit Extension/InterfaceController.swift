@@ -42,6 +42,8 @@ class InterfaceController: WKInterfaceController {
             timer.start()
             timerButton.setTitle("Stop Timer")
         }
+        
+        timerRunning.toggle()
     }
     
     @IBAction func onMinusButton() {
