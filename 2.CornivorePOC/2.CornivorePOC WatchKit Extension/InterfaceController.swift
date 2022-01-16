@@ -15,8 +15,6 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet weak var timerButton: WKInterfaceButton!
     @IBOutlet weak var weightLabel: WKInterfaceLabel!
     
-    @IBOutlet weak var cookLabel: WKInterfaceLabel!
-    
     var ounces = 16
     var cookTemp = MeatTemperature.medium
     var timerRunning = false
@@ -29,7 +27,6 @@ class InterfaceController: WKInterfaceController {
     
     func updateConfiguration() {
         weightLabel.setText("Weight: \(ounces) oz")
-        cookLabel.setText(cookTemp.stringValue)
     }
 
     @IBAction func onTimerButton() {
@@ -54,13 +51,6 @@ class InterfaceController: WKInterfaceController {
     @IBAction func onPlusButton() {
         ounces += 1
         updateConfiguration()
-    }
-    
-    @IBAction func onTempChange(_ value: Float) {
-        if let temp = MeatTemperature(rawValue: Int(value)) {
-            cookTemp = temp
-            updateConfiguration()
-        }
     }
     
 }
