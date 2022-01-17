@@ -21,6 +21,8 @@
 		1D3F7BC42794611200F58F22 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3F7BC32794611200F58F22 /* ExtensionDelegate.swift */; };
 		1D3F7BC62794611200F58F22 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3F7BC52794611200F58F22 /* ComplicationController.swift */; };
 		1D3F7BC82794611300F58F22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D3F7BC72794611300F58F22 /* Assets.xcassets */; };
+		1D3F7BD92795518A00F58F22 /* MeatTemperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3F7BD82795518A00F58F22 /* MeatTemperature.swift */; };
+		1D3F7BDA2795518A00F58F22 /* MeatTemperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3F7BD82795518A00F58F22 /* MeatTemperature.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,7 @@
 		1D3F7BC52794611200F58F22 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		1D3F7BC72794611300F58F22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D3F7BC92794611300F58F22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D3F7BD82795518A00F58F22 /* MeatTemperature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeatTemperature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +109,7 @@
 		1D3F7B912794611000F58F22 = {
 			isa = PBXGroup;
 			children = (
+				1D3F7BD72794632800F58F22 /* Models */,
 				1D3F7B9C2794611000F58F22 /* 3.PickerPOC */,
 				1D3F7BB22794611200F58F22 /* 3.PickerPOC WatchKit App */,
 				1D3F7BC02794611200F58F22 /* 3.PickerPOC WatchKit Extension */,
@@ -156,6 +160,14 @@
 				1D3F7BC92794611300F58F22 /* Info.plist */,
 			);
 			path = "3.PickerPOC WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		1D3F7BD72794632800F58F22 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1D3F7BD82795518A00F58F22 /* MeatTemperature.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D3F7BA22794611000F58F22 /* ViewController.swift in Sources */,
+				1D3F7BD92795518A00F58F22 /* MeatTemperature.swift in Sources */,
 				1D3F7B9E2794611000F58F22 /* AppDelegate.swift in Sources */,
 				1D3F7BA02794611000F58F22 /* SceneDelegate.swift in Sources */,
 			);
@@ -301,6 +314,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D3F7BC42794611200F58F22 /* ExtensionDelegate.swift in Sources */,
+				1D3F7BDA2795518A00F58F22 /* MeatTemperature.swift in Sources */,
 				1D3F7BC22794611200F58F22 /* InterfaceController.swift in Sources */,
 				1D3F7BC62794611200F58F22 /* ComplicationController.swift in Sources */,
 			);
